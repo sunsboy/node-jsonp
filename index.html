@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+</head>
+<body>
+    <div id="app">
+        <button class='btn'>获取数据-></button>
+        <p>
+            <span>用户名：</span>
+            <input type="text" class='username'>
+        </p>
+        <p>
+            <span>地址：</span>
+            <input type="text" size='50' class='address'>
+        </p>
+    </div>
+</body>
+ <script>
+     function showData(data){
+        console.log(data);
+        setData(data);
+     }
+
+     function setData(data){
+        var btn = document.getElementsByClassName('btn')[0];
+        console.log(btn);
+        var username = document.getElementsByClassName('username')[0];
+        var address = document.getElementsByClassName('address')[0];
+        btn.onclick = function(){
+            console.log(data);
+            username.value = data.username;
+            address.value = data.address;
+        }
+     }
+ </script>
+ <script src='http://localhost:9001/jsonp?callback=showData'></script>
+</html>
